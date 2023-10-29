@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Paciente</title>
+</head>
+<body>
+    <h1>Crear Paciente</h1>
+    <form action="/create-paciente" method="get">
+        Nombre: <input type="text" name="nombre"><br>
+        Apellido: <input type="text" name="apellido"><br>
+        Fecha de Nacimiento: <input type="date" name="fechadeNacimiento"><br>
+        Género: 
+        <select name="genero">
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+        </select><br>
+        Dirección: <input type="text" name="direccion"><br>
+        Número de Teléfono: <input type="text" name="numeroTelefono"><br>
+        <input type="submit" value="Crear Paciente">
+    </form>
+</body>
+</html>

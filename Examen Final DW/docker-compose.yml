@@ -1,0 +1,15 @@
+version: "4.24.2"
+services:
+  app:  
+    build: .
+    ports:
+      - "5000:5000" 
+    links:
+      - monguoDB 
+  monguoDB:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=darlin018  
+      - MONGO_INITDB_ROOT_PASSWORD=cisneros

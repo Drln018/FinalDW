@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Pacientes</title>
+</head>
+<body>
+    <h1>Lista de Pacientes</h1>
+    <ul id="pacientesList"></ul>
+
+    <script>
+        fetch('/get-pacientes')
+            .then(response => response.json())
+            .then(data => {
+                const pacientesList = document.getElementById('pacientesList');
+                data.forEach(paciente => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `ID: ${paciente._id}, Nombre: ${paciente.nombre}, Apellido: ${paciente.apellido}`;
+                    pacientesList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
